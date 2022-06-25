@@ -87,6 +87,7 @@ if azure_networking_product == 'Virtual Network':
         st.markdown("Huawei Cloud")
         st.markdown(alternative_products[0].Huawei, unsafe_allow_html=True)
             
-            
+    
+    st.subheader("Click the below link for more info")
     st.write('https://azure.microsoft.com/en-us/services/virtual-network/')       
       
