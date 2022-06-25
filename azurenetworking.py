@@ -61,31 +61,37 @@ if azure_networking_product == 'VNet':
     
     st.subheader("Similar Offerings by other vendors")
         
-    col1, col2, col3, col4, col5, col6 =st.columns(6)
+    
+    with st.expander("Expand for details"):
+        vendor, product, link =st.columns(6)
 
-    with col1: 
-        st.markdown("Google Cloud")
-        st.markdown(alternative_products[0].Google, unsafe_allow_html=True)
+        with vendor: 
+            st.subheader("Vendor")
+            st.write("Google")
+            st.write("AWS")
+            st.write("IBM")
+            st.write("Oracle")
+            st.write("Alibaba")
+            st.write("Huawei")
+            
 
-    with col2:
-        st.markdown("AWS")
-        st.markdown(alternative_products[0].AWS, unsafe_allow_html=True)
+        with product:
+            st.write(alternative_products[0].Google)
+            st.write(alternative_products[0].AWS)
+            st.write(alternative_products[0].IBM)
+            st.write(alternative_products[0].Oracle)
+            st.write(alternative_products[0].Alibaba)
+            st.write(alternative_products[0].Huawei)
 
-    with col3:
-        st.markdown("IBM Cloud")
-        st.markdown(alternative_products[0].IBM, unsafe_allow_html=True)
+        with link:
+            st.markdown("https://cloud.google.com/vpc", unsafe_allow_html=True)
+            st.markdown("https://aws.amazon.com/vpc/", unsafe_allow_html=True)
+            st.markdown("https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started", unsafe_allow_html=True)
+            st.markdown("https://cloud.oracle.com/networking", unsafe_allow_html=True)
+            st.markdown("https://www.alibabacloud.com/product/vpc", unsafe_allow_html=True)
+            st.markdown("https://www.huaweicloud.com/intl/en-us/product/vpc.html", unsafe_allow_html=True)
 
-    with col4:
-        st.markdown("Oracle Cloud")
-        st.markdown(alternative_products[0].Oracle, unsafe_allow_html=True)
 
-    with col5:
-        st.markdown("Alibaba Cloud")
-        st.markdown(alternative_products[0].Alibaba, unsafe_allow_html=True)
-
-    with col6:
-        st.markdown("Huawei Cloud")
-        st.markdown(alternative_products[0].Huawei, unsafe_allow_html=True)
             
     
     st.subheader("Click the below link for more info")
