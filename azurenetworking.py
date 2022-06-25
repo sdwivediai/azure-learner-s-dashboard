@@ -3,6 +3,10 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import requests as r
 import streamlit as st
+from gsheetsdb import connect
+
+# # Create a connection object.
+conn = connect()
 
 
 # # Perform SQL query on the Google Sheet.
