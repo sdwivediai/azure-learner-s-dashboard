@@ -28,7 +28,7 @@ with st.sidebar:
 if azure_networking_product == 'VNet':
     st.title('Azure Virtual Network')
 
-    what, why, explanation = st.columns(3)
+    what, why = st.columns(2)
 
     #@st.cache(suppress_st_warning=True)
     def get_azuredoc_info():
@@ -51,8 +51,8 @@ if azure_networking_product == 'VNet':
         why_vnet = azure_doc_info[1].text
         st.markdown(why_vnet)
 
-    with explanation:
-        st.subheader("Detailed Explanation")
+   
+    st.expander("Detailed Explanation"):
         st.video("https://www.youtube.com/embed/7rzawA--r20")
     
     
