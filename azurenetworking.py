@@ -76,6 +76,7 @@ if azure_networking_product == 'VNet':
             
 
         with product:
+            st.subheader("Product")
             st.write(alternative_products[0].Google)
             st.write(alternative_products[0].AWS)
             st.write(alternative_products[0].IBM)
@@ -84,6 +85,7 @@ if azure_networking_product == 'VNet':
             st.write(alternative_products[0].Huawei)
 
         with link:
+            st.subheader("Link")
             st.markdown("https://cloud.google.com/vpc", unsafe_allow_html=True)
             st.markdown("https://aws.amazon.com/vpc/", unsafe_allow_html=True)
             st.markdown("https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started", unsafe_allow_html=True)
