@@ -60,5 +60,32 @@ if azure_networking_product == 'Virtual Network':
     st.write('https://azure.microsoft.com/en-us/services/virtual-network/')
     
     alternative_products = run_query(f'SELECT * FROM "{cloud_comparison}" where Category = "Virtual Network"')
-    st.write(alternative_products)
     
+    
+    with st.expander("Similar Offerings by other vendors", expanded=False):
+        
+        col1, col2, col3, col4, col5, col6 =st.columns(6)
+
+        with col1: 
+            st.subheader("Google Cloud")
+            st.markdown(alternative_products[0].Google)
+
+        with col2:
+            st.subheader("AWS")
+            st.markdown(alternative_products[0].AWS)
+
+        with col3:
+            st.subheader("IBM Cloud")
+            st.markdown(alternative_products[0].IBM)
+
+        with col4:
+            st.subheader("Oracle Cloud")
+            st.markdown(alternative_products[0].Oracle)
+
+        with col5:
+            st.subheader("Alibaba Cloud")
+            st.markdown(alternative_products[0].Alibaba)
+
+        with col6:
+            st.subheader("Huawei Cloud")
+            st.markdown(alternative_products[0].Huawei)
