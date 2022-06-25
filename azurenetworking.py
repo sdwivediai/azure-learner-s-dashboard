@@ -5,6 +5,17 @@ import requests as r
 import streamlit as st
 
 
+# # Perform SQL query on the Google Sheet.
+# # Uses st.cache to only rerun when the query changes or after 10 min.
+@st.cache(ttl=600)
+def run_query(query):
+    rows = conn.execute(query, headers=1)
+    rows = rows.fetchall()
+    return rows
+
+cloud_comparison = st.secrets["Cloud Comparison"]
+
+
 
 with st.sidebar:
     azure_networking_product = st.radio('Choose an Azure networking product', ['None', 'Virtual Network', 'Load Balancer', 'Private Link'])
@@ -44,4 +55,6 @@ if azure_networking_product == 'Virtual Network':
     st.subheader('For more info')
     st.write('https://azure.microsoft.com/en-us/services/virtual-network/')
     
+    rows = run_query(f'SELECT * FROM "{cloud_comparison}" WHERE "{category}"== "Virtual Network"')
+    print(rows)
     
