@@ -25,7 +25,7 @@ with st.sidebar:
     azure_networking_product = st.radio('Choose an Azure networking product', ['VNet', 'VPN Gateway', 'CDN', 'Azure Front Door', 'Azure DNS', 'Azure Traffic Manager', 'Express Route', 'Azure Load Balancer'])
 
 
-if azure_networking_product == 'Virtual Network':
+if azure_networking_product == 'VNet':
     st.title('Azure Virtual Network')
 
     what, why, explanation = st.columns(3)
