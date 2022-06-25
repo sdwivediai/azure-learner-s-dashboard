@@ -22,7 +22,7 @@ cloud_comparison = st.secrets["Cloud_Comparison"]
 
 
 with st.sidebar:
-    azure_networking_product = st.radio('Choose an Azure networking product', ['None', 'Virtual Network', 'Load Balancer', 'Private Link'])
+    azure_networking_product = st.radio('Choose an Azure networking product', ['VNet', 'VPN Gateway', 'CDN', 'Azure Front Door', 'Azure DNS', 'Azure Traffic Manager', 'Express Route', 'Azure Load Balancer'])
 
 
 if azure_networking_product == 'Virtual Network':
