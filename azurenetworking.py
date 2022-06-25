@@ -52,7 +52,7 @@ if azure_networking_product == 'VNet':
         st.markdown(why_vnet)
 
    
-    st.expander("Detailed Explanation"):
+    with st.expander("Detailed Explanation"):
         st.video("https://www.youtube.com/embed/7rzawA--r20")
     
     
