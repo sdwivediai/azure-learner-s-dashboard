@@ -59,7 +59,7 @@ if azure_networking_product == 'Virtual Network':
     alternative_products = run_query(f'SELECT * FROM "{cloud_comparison}" where Category = "Virtual Network"')
     
     
-    with st.expander("Similar Offerings by other vendors", expanded=False):
+    st.subheader("Similar Offerings by other vendors"):
         
         col1, col2, col3, col4, col5, col6 =st.columns(6)
 
