@@ -13,7 +13,7 @@ def run_query(query):
     rows = rows.fetchall()
     return rows
 
-cloud_comparison = st.secrets["Cloud Comparison"]
+cloud_comparison = st.secrets["Cloud_Comparison"]
 
 
 
