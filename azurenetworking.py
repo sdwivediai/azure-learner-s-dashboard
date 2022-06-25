@@ -41,23 +41,20 @@ if azure_networking_product == 'Virtual Network':
     azure_doc_info = get_azuredoc_info()
 
     with what:
-        st.header("What is Azure Virtual Network")
+        st.subheader("What is Azure Virtual Network")
         what_is_vnet = azure_doc_info[0].text
         st.markdown(what_is_vnet)
         #st.markdown(f'https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview', unsafe_allow_html=True)
 
     with why:
-        st.header("Why use a Virtual Network")
+        st.subheader("Why use a Virtual Network")
         why_vnet = azure_doc_info[1].text
         st.markdown(why_vnet)
 
     with explanation:
-        st.header("Detailed Explanation")
+        st.subheader("Detailed Explanation")
         st.video("https://www.youtube.com/embed/7rzawA--r20")
     
-    
-    st.subheader('For more info')
-    st.write('https://azure.microsoft.com/en-us/services/virtual-network/')
     
     alternative_products = run_query(f'SELECT * FROM "{cloud_comparison}" where Category = "Virtual Network"')
     
@@ -67,7 +64,7 @@ if azure_networking_product == 'Virtual Network':
         col1, col2, col3, col4, col5, col6 =st.columns(6)
 
         with col1: 
-            st.subheader("Google Cloud")
+            st.("Google Cloud")
             st.markdown(alternative_products[0].Google, unsafe_allow_html=True)
 
         with col2:
@@ -89,3 +86,7 @@ if azure_networking_product == 'Virtual Network':
         with col6:
             st.subheader("Huawei Cloud")
             st.markdown(alternative_products[0].Huawei, unsafe_allow_html=True)
+            
+            
+    st.text('https://azure.microsoft.com/en-us/services/virtual-network/')       
+      
