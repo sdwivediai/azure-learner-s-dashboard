@@ -76,7 +76,7 @@ if azure_networking_product == 'VNet':
             
 
         with product:
-            st.subheader("Product")
+            st.subheader("Offering Name")
             st.write(alternative_products[0].Google)
             st.write(alternative_products[0].AWS)
             st.write(alternative_products[0].IBM)
