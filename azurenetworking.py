@@ -61,31 +61,31 @@ if azure_networking_product == 'Virtual Network':
     
     st.subheader("Similar Offerings by other vendors")
         
-        col1, col2, col3, col4, col5, col6 =st.columns(6)
+    col1, col2, col3, col4, col5, col6 =st.columns(6)
 
-        with col1: 
-            st.markdown("Google Cloud")
-            st.markdown(alternative_products[0].Google, unsafe_allow_html=True)
+    with col1: 
+        st.markdown("Google Cloud")
+        st.markdown(alternative_products[0].Google, unsafe_allow_html=True)
 
-        with col2:
-            st.markdown("AWS")
-            st.markdown(alternative_products[0].AWS, unsafe_allow_html=True)
+    with col2:
+        st.markdown("AWS")
+        st.markdown(alternative_products[0].AWS, unsafe_allow_html=True)
 
-        with col3:
-            st.markdown("IBM Cloud")
-            st.markdown(alternative_products[0].IBM, unsafe_allow_html=True)
+    with col3:
+        st.markdown("IBM Cloud")
+        st.markdown(alternative_products[0].IBM, unsafe_allow_html=True)
 
-        with col4:
-            st.markdown("Oracle Cloud")
-            st.markdown(alternative_products[0].Oracle, unsafe_allow_html=True)
+    with col4:
+        st.markdown("Oracle Cloud")
+        st.markdown(alternative_products[0].Oracle, unsafe_allow_html=True)
 
-        with col5:
-            st.markdown("Alibaba Cloud")
-            st.markdown(alternative_products[0].Alibaba, unsafe_allow_html=True)
+    with col5:
+        st.markdown("Alibaba Cloud")
+        st.markdown(alternative_products[0].Alibaba, unsafe_allow_html=True)
 
-        with col6:
-            st.markdown("Huawei Cloud")
-            st.markdown(alternative_products[0].Huawei, unsafe_allow_html=True)
+    with col6:
+        st.markdown("Huawei Cloud")
+        st.markdown(alternative_products[0].Huawei, unsafe_allow_html=True)
             
             
     st.write('https://azure.microsoft.com/en-us/services/virtual-network/')       
