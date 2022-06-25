@@ -55,6 +55,6 @@ if azure_networking_product == 'Virtual Network':
     st.subheader('For more info')
     st.write('https://azure.microsoft.com/en-us/services/virtual-network/')
     
-    rows = run_query(f'SELECT * FROM "{cloud_comparison}" WHERE "{row.Category}"="Virtual Network"')
-    print(rows)
+    alternative_products = run_query(f'SELECT * FROM "{cloud_comparison}" WHERE "{Category}"="Virtual Network"')
+    st.write(alternative_products)
     
