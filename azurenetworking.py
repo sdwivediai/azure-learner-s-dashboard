@@ -64,7 +64,7 @@ if azure_networking_product == 'Virtual Network':
         col1, col2, col3, col4, col5, col6 =st.columns(6)
 
         with col1: 
-            st.("Google Cloud")
+            st.subheader("Google Cloud")
             st.markdown(alternative_products[0].Google, unsafe_allow_html=True)
 
         with col2:
