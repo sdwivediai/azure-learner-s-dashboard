@@ -63,7 +63,7 @@ if azure_networking_product == 'VNet':
         
     
     with st.expander("Expand for details"):
-        vendor, product, link =st.columns(6)
+        vendor, product, link =st.columns(3)
 
         with vendor: 
             st.subheader("Vendor")
