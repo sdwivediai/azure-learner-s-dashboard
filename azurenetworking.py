@@ -68,24 +68,24 @@ if azure_networking_product == 'Virtual Network':
 
         with col1: 
             st.subheader("Google Cloud")
-            st.markdown(alternative_products[0].Google)
+            st.markdown(alternative_products[0].Google, unsafe_allow_html=True)
 
         with col2:
             st.subheader("AWS")
-            st.markdown(alternative_products[0].AWS)
+            st.markdown(alternative_products[0].AWS, unsafe_allow_html=True)
 
         with col3:
             st.subheader("IBM Cloud")
-            st.markdown(alternative_products[0].IBM)
+            st.markdown(alternative_products[0].IBM, unsafe_allow_html=True)
 
         with col4:
             st.subheader("Oracle Cloud")
-            st.markdown(alternative_products[0].Oracle)
+            st.markdown(alternative_products[0].Oracle, unsafe_allow_html=True)
 
         with col5:
             st.subheader("Alibaba Cloud")
-            st.markdown(alternative_products[0].Alibaba)
+            st.markdown(alternative_products[0].Alibaba, unsafe_allow_html=True)
 
         with col6:
             st.subheader("Huawei Cloud")
-            st.markdown(alternative_products[0].Huawei)
+            st.markdown(alternative_products[0].Huawei, unsafe_allow_html=True)
