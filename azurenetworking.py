@@ -51,8 +51,8 @@ if azure_networking_product == 'VNet':
         why_vnet = azure_doc_info[1].text
         st.markdown(why_vnet)
 
-   
-    with st.expander("Detailed Explanation"):
+    st.subheader("Video Tutorial")
+    with st.expander("Expand for tutorial"):
         st.video("https://www.youtube.com/embed/7rzawA--r20")
     
     
