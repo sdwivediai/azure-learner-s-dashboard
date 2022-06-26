@@ -29,7 +29,7 @@ if azure_networking_product == 'VNet':
     st.subheader('Basic Concept')
     st.markdown("A virtual network, in general, can be thought of as a virtual routing switch hosted in the cloud that all services connect to and use to communicate with each other. Azure's virtual network offering is called VNet. Further down the page you will find a list of virtual network offerings by other cloud providers.")
 
-    what, why = st.columns(2)
+    #what, why = st.columns(2)
 
     #@st.cache(suppress_st_warning=True)
     def get_azuredoc_info():
@@ -47,10 +47,10 @@ if azure_networking_product == 'VNet':
         st.markdown(what_is_vnet)
         #st.markdown(f'https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview', unsafe_allow_html=True)
 
-    with why:
-        st.subheader("Why use a Virtual Network")
-        why_vnet = azure_doc_info[1].text
-        st.markdown(why_vnet)
+    #with why:
+    st.subheader("Azure VNet")
+    why_vnet = azure_doc_info[1].text
+    st.markdown(why_vnet)
 
     st.subheader("Video Tutorial")
     with st.expander("Expand for tutorial"):
