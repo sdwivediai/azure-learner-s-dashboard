@@ -26,7 +26,8 @@ with st.sidebar:
 
 
 if azure_networking_product == 'VNet':
-    st.title('Azure Virtual Network')
+    st.subheader('Basic Concept')
+    st.markdown("A virtual network, in general, can be thought of as a virtual routing switch hosted in the cloud that all services connect to and use to communicate with each other. Azure's virtual network offering is called VNet. Further down the page you will find a list of virtual network offerings by other cloud providers.")
 
     what, why = st.columns(2)
 
