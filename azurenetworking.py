@@ -143,10 +143,17 @@ if azure_networking_product == 'VPN Gateway':
         product, link =st.columns(2)
 
         for product in alternative_products:
-            st.write(f"{product.Vendors}  :{product.Network_Gateway}:")
+            st.write(f"{product.Vendors} -- {product.Network_Gateway} -- [link]("https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview"))
         
 
-        
+        with link:
+            st.subheader("Link")
+            st.markdown("https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview", unsafe_allow_html=True)
+            st.markdown("https://aws.amazon.com/vpn/client-vpn/", unsafe_allow_html=True)
+            st.markdown("https://cloud.ibm.com/docs/infrastructure/iaas-vpn?topic=VPN-about-iaas-vpn", unsafe_allow_html=True)
+            st.markdown("https://www.oracle.com/cloud/networking/vpn-connect.html", unsafe_allow_html=True)
+            st.markdown("https://www.alibabacloud.com/product/vpn-gateway", unsafe_allow_html=True)
+            st.markdown("https://www.huaweicloud.com/intl/en-us/product/vpn.html", unsafe_allow_html=True)
 
      
     st.subheader("Important difference(s), if any, with competitive offerings")
