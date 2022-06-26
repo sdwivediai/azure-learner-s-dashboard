@@ -140,21 +140,12 @@ if azure_networking_product == 'VPN Gateway':
    
     with st.expander("Expand for details"):
     
-        vendor, product, link =st.columns(3)
-
-        with vendor: 
-            st.subheader("Vendor")
-            st.write("Google")
-            st.write("AWS")
-            st.write("IBM")
-            st.write("Oracle")
-            st.write("Alibaba")
-            st.write("Huawei")
+        product, link =st.columns(2)
 
 
         with product:
             st.subheader("Offering Name")
-            st.write(alternative_products[0].Google("https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview"))
+            st.write(alternative_products[0].Google)
             st.write(alternative_products[0].AWS)
             st.write(alternative_products[0].IBM)
             st.write(alternative_products[0].Oracle)
