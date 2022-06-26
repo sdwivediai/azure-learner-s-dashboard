@@ -154,7 +154,7 @@ if azure_networking_product == 'VPN Gateway':
 
         with product:
             st.subheader("Offering Name")
-            st.write(alternative_products.Google)
+            st.write([{alternative_products[0].Google}]("https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview"))
             st.write(alternative_products[0].AWS)
             st.write(alternative_products[0].IBM)
             st.write(alternative_products[0].Oracle)
