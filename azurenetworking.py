@@ -41,13 +41,17 @@ if azure_networking_product == 'VNet':
 
     azure_doc_info = get_azuredoc_info()
 
-    with what:
-        st.subheader("What is Azure Virtual Network")
-        what_is_vnet = azure_doc_info[0].text
-        st.markdown(what_is_vnet)
-        #st.markdown(f'https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview', unsafe_allow_html=True)
+    #with what:
+        #st.subheader("What is Azure Virtual Network")
+        #what_is_vnet = azure_doc_info[0].text
+        #st.markdown(what_is_vnet)
+        
 
     #with why:
+        #st.subheader("Why use an Azure VNet")
+        #why_vnet = azure_doc_info[1].text
+        #st.markdown(why_vnet)
+        
     st.subheader("Azure VNet")
     why_vnet = azure_doc_info[1].text
     st.markdown(why_vnet)
