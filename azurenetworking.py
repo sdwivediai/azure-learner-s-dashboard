@@ -19,12 +19,12 @@ def run_query(query):
 
 cloud_comparison = st.secrets["Cloud_Comparison"]
 
-
+alternative_products = run_query(f'SELECT * FROM "{cloud_comparison}"')
 
 with st.sidebar:
-    azure_networking_product = st.radio('Choose an Azure networking product', ['VNet', 'VPN Gateway', 'Load Balancer', 'CDN', 'AFD', 'DNS', 'Traffic Manager', 'Express Route'])
+    azure_networking_product = st.radio('Choose an Azure networking product', ['VNet', 'VPN Gateway', 'Load Balancer', 'CDN', 'AFD', 'DNS', 'Traffic Manager', 'Express Route']) 
 
-
+    
 if azure_networking_product == 'VNet':
     st.subheader('Basic Concept')
     st.markdown("A virtual network, in general, can be thought of as a virtual routing switch hosted in the cloud that all services connect to and use to communicate with each other. Azure's virtual network offering is called VNet. Further down the page you will find a list of virtual network offerings by other cloud providers.")
@@ -41,16 +41,6 @@ if azure_networking_product == 'VNet':
 
     azure_doc_info = get_azuredoc_info()
 
-    #with what:
-        #st.subheader("What is Azure Virtual Network")
-        #what_is_vnet = azure_doc_info[0].text
-        #st.markdown(what_is_vnet)
-        
-
-    #with why:
-        #st.subheader("Why use an Azure VNet")
-        #why_vnet = azure_doc_info[1].text
-        #st.markdown(why_vnet)
         
     st.subheader("Azure VNet")
     why_vnet = azure_doc_info[1].text
@@ -62,43 +52,25 @@ if azure_networking_product == 'VNet':
         st.video("https://www.youtube.com/embed/7rzawA--r20")
     
     
-    alternative_products = run_query(f'SELECT * FROM "{cloud_comparison}" where Category = "Virtual Network"')
-    
     
     st.subheader("Similar Offerings by other vendors")
    
     with st.expander("Expand for details"):
- 
-        product, link =st.columns(2)
-
-        #with vendor: 
-            #st.subheader("Vendor")
-            #st.write("Google")
-            #st.write("AWS")
-            #st.write("IBM")
-            #st.write("Oracle")
-            #st.write("Alibaba")
-            #st.write("Huawei")
-
-
+        vendor, product, link = st.columns(3)
+        
+        with vendor:
+            for alt in alternative_products:
+                st.write(f"{alt.Vendors}")
+        
         with product:
-            st.subheader("Offering Name")
-            st.write(alternative_products[0].Google)
-            st.write(alternative_products[0].AWS)
-            st.write(alternative_products[0].IBM)
-            st.write(alternative_products[0].Oracle)
-            st.write(alternative_products[0].Alibaba)
-            st.write(alternative_products[0].Huawei)
-
+            for alt in alternative_products:
+                st.write(f"{alt.Virtual_Network}")
+        
         with link:
-            st.subheader("Link")
-            st.markdown("https://cloud.google.com/vpc", unsafe_allow_html=True)
-            st.markdown("https://aws.amazon.com/vpc/", unsafe_allow_html=True)
-            st.markdown("https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started", unsafe_allow_html=True)
-            st.markdown("https://cloud.oracle.com/networking", unsafe_allow_html=True)
-            st.markdown("https://www.alibabacloud.com/product/vpc", unsafe_allow_html=True)
-            st.markdown("https://www.huaweicloud.com/intl/en-us/product/vpc.html", unsafe_allow_html=True)
+            for alt in alternative_products:
+                st.write(f"{alt.Virtual_Network_link}")
 
+       
      
     st.subheader("Important difference(s), if any, with competitive offerings")
     st.markdown("Azure VNet and AWS VPC are created in a region. They can span across multiple Availability Zones(AZ) though and subnets exist inisde an AZ. In comparison, a Google Cloud VPC is a global resource and is not associated with any specific region. The subnets in it are region specific. ")        
@@ -133,7 +105,7 @@ if azure_networking_product == 'VPN Gateway':
         st.video("https://youtu.be/yYnACA8ggNI")
     
     
-    alternative_products = run_query(f'SELECT * FROM "{cloud_comparison}"')
+    
     
     
     st.subheader("Similar Offerings by other vendors")
@@ -184,43 +156,26 @@ if azure_networking_product == 'Load Balancer':
         st.video("https://youtu.be/wJvmXM81tEI")
     
     
-    alternative_products = run_query(f'SELECT * FROM "{cloud_comparison}" where Category = "Load Balancers"')
+
     
     
     st.subheader("Similar Offerings by other vendors")
    
     with st.expander("Expand for details"):
- 
-        vendor, product, link =st.columns(3)
-
-        with vendor: 
-            st.subheader("Vendor")
-            st.write("Google")
-            st.write("AWS")
-            st.write("IBM")
-            st.write("Oracle")
-            st.write("Alibaba")
-            st.write("Huawei")
-
-
+        vendor, product, link = st.columns(3)
+        
+        with vendor:
+            for alt in alternative_products:
+                st.write(f"{alt.Vendors}")
+        
         with product:
-            st.subheader("Offering Name")
-            st.write(alternative_products[0].Google)
-            st.write(alternative_products[0].AWS)
-            st.write(alternative_products[0].IBM)
-            st.write(alternative_products[0].Oracle)
-            st.write(alternative_products[0].Alibaba)
-            st.write(alternative_products[0].Huawei)
-
+            for alt in alternative_products:
+                st.write(f"{alt.Load_Balancers}")
+        
         with link:
-            st.subheader("Link")
-            st.markdown("https://cloud.google.com/load-balancing/", unsafe_allow_html=True)
-            st.markdown("https://aws.amazon.com/elasticloadbalancing/", unsafe_allow_html=True)
-            st.markdown("https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-vs-elb", unsafe_allow_html=True)
-            st.markdown("https://www.oracle.com/cloud/networking/load-balancing/", unsafe_allow_html=True)
-            st.markdown("https://www.alibabacloud.com/product/server-load-balancer", unsafe_allow_html=True)
-            st.markdown("https://www.huaweicloud.com/intl/en-us/product/elb.html", unsafe_allow_html=True)
-
+            for alt in alternative_products:
+                st.write(f"{alt.Load_Balancers_link}")
+        
      
     st.subheader("Important difference(s), if any, with competitive offerings")
     #st.markdown("Azure VNet and AWS VPC are created in a region. They can span across multiple Availability Zones(AZ) though and subnets exist inisde an AZ. In comparison, a Google Cloud VPC is a global resource and is not associated with any specific region. The subnets in it are region specific. ")        
