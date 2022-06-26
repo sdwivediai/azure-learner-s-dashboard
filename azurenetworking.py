@@ -83,7 +83,7 @@ if azure_networking_product == 'VNet':
 
         with product:
             st.subheader("Offering Name")
-            st.write("[{alternative_products[0].Google}](https://cloud.google.com/vpc)")
+            st.write([alternative_products[0].Google](https://cloud.google.com/vpc))
             st.write(alternative_products[0].AWS)
             st.write(alternative_products[0].IBM)
             st.write(alternative_products[0].Oracle)
