@@ -130,10 +130,10 @@ if azure_networking_product == 'VPN Gateway':
 
     st.subheader("Video Tutorial")
     with st.expander("Expand for tutorial"):
-        st.video("https://www.youtube.com/embed/7rzawA--r20")
+        st.video("https://youtu.be/yYnACA8ggNI")
     
     
-    alternative_products = run_query(f'SELECT * FROM "{cloud_comparison}" where Category = "Virtual Network"')
+    alternative_products = run_query(f'SELECT * FROM "{cloud_comparison}" where Category = "Network Gateway"')
     
     
     st.subheader("Similar Offerings by other vendors")
@@ -163,18 +163,17 @@ if azure_networking_product == 'VPN Gateway':
 
         with link:
             st.subheader("Link")
-            st.markdown("https://cloud.google.com/vpc", unsafe_allow_html=True)
-            st.markdown("https://aws.amazon.com/vpc/", unsafe_allow_html=True)
-            st.markdown("https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started", unsafe_allow_html=True)
-            st.markdown("https://cloud.oracle.com/networking", unsafe_allow_html=True)
-            st.markdown("https://www.alibabacloud.com/product/vpc", unsafe_allow_html=True)
-            st.markdown("https://www.huaweicloud.com/intl/en-us/product/vpc.html", unsafe_allow_html=True)
+            st.markdown("https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview", unsafe_allow_html=True)
+            st.markdown("https://aws.amazon.com/vpn/client-vpn/", unsafe_allow_html=True)
+            st.markdown("https://cloud.ibm.com/docs/infrastructure/iaas-vpn?topic=VPN-about-iaas-vpn", unsafe_allow_html=True)
+            st.markdown("https://www.oracle.com/cloud/networking/vpn-connect.html", unsafe_allow_html=True)
+            st.markdown("https://www.alibabacloud.com/product/vpn-gateway", unsafe_allow_html=True)
+            st.markdown("https://www.huaweicloud.com/intl/en-us/product/vpn.html", unsafe_allow_html=True)
 
      
     st.subheader("Important difference(s), if any, with competitive offerings")
-    st.markdown("Azure VNet and AWS VPC are created in a region. They can span across multiple Availability Zones(AZ) though and subnets exist inisde an AZ. In comparison, a Google Cloud VPC is a global resource and is not associated with any specific region. The subnets in it are region specific. ")        
+    #st.markdown("Azure VNet and AWS VPC are created in a region. They can span across multiple Availability Zones(AZ) though and subnets exist inisde an AZ. In comparison, a Google Cloud VPC is a global resource and is not associated with any specific region. The subnets in it are region specific. ")        
 
-    #st.subheader("Click the below link for more info")
-    #st.write('https://azure.microsoft.com/en-us/services/virtual-network/')       
+        
       
 
