@@ -22,7 +22,7 @@ cloud_comparison = st.secrets["Cloud_Comparison"]
 
 
 with st.sidebar:
-    azure_networking_product = st.radio('Choose an Azure networking product', ['VNet', 'VPN Gateway', 'CDN', 'AFD', 'DNS', 'Traffic Manager', 'Express Route', 'Load Balancer'])
+    azure_networking_product = st.radio('Choose an Azure networking product', ['VNet', 'VPN Gateway', 'Load Balancer', 'CDN', 'AFD', 'DNS', 'Traffic Manager', 'Express Route'])
 
 
 if azure_networking_product == 'VNet':
@@ -175,5 +175,76 @@ if azure_networking_product == 'VPN Gateway':
     #st.markdown("Azure VNet and AWS VPC are created in a region. They can span across multiple Availability Zones(AZ) though and subnets exist inisde an AZ. In comparison, a Google Cloud VPC is a global resource and is not associated with any specific region. The subnets in it are region specific. ")        
 
         
+  
+if azure_networking_product == 'Load Balancer':
+    
+
+    #@st.cache(suppress_st_warning=True)
+    def get_lb_info():
+        req = r.get(f"https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+                    headers = {"user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"})
+        soup = BeautifulSoup(req.content, features="html.parser") #converting the content/text returned by request to a BeautifulSoup object
+        vpn_info = soup.find("div", class_="content").find_all("p")
+        return vpn_info
+
+    vpn_info = get_vpn_info()
+
+    st.subheader('Basic Concept')
+    st.markdown(vpn_info[0].text)
+    
+        
+    st.subheader("Azure Load Balancer")
+    st.markdown(vpn_info[1].text)
+    st.write('https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview')  
+
+    st.subheader("Video Tutorial")
+    with st.expander("Expand for tutorial"):
+        st.video("https://youtu.be/wJvmXM81tEI")
+    
+    
+    alternative_products = run_query(f'SELECT * FROM "{cloud_comparison}" where Category = "Load Balancers"')
+    
+    
+    st.subheader("Similar Offerings by other vendors")
+   
+    with st.expander("Expand for details"):
+ 
+        vendor, product, link =st.columns(3)
+
+        with vendor: 
+            st.subheader("Vendor")
+            st.write("Google")
+            st.write("AWS")
+            st.write("IBM")
+            st.write("Oracle")
+            st.write("Alibaba")
+            st.write("Huawei")
+
+
+        with product:
+            st.subheader("Offering Name")
+            st.write(alternative_products[0].Google)
+            st.write(alternative_products[0].AWS)
+            st.write(alternative_products[0].IBM)
+            st.write(alternative_products[0].Oracle)
+            st.write(alternative_products[0].Alibaba)
+            st.write(alternative_products[0].Huawei)
+
+        with link:
+            st.subheader("Link")
+            st.markdown("https://cloud.google.com/load-balancing/", unsafe_allow_html=True)
+            st.markdown("https://aws.amazon.com/elasticloadbalancing/", unsafe_allow_html=True)
+            st.markdown("https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-vs-elb", unsafe_allow_html=True)
+            st.markdown("https://www.oracle.com/cloud/networking/load-balancing/", unsafe_allow_html=True)
+            st.markdown("https://www.alibabacloud.com/product/server-load-balancer", unsafe_allow_html=True)
+            st.markdown("https://www.huaweicloud.com/intl/en-us/product/elb.html", unsafe_allow_html=True)
+
+     
+    st.subheader("Important difference(s), if any, with competitive offerings")
+    #st.markdown("Azure VNet and AWS VPC are created in a region. They can span across multiple Availability Zones(AZ) though and subnets exist inisde an AZ. In comparison, a Google Cloud VPC is a global resource and is not associated with any specific region. The subnets in it are region specific. ")        
+
+        
       
+
+
 
