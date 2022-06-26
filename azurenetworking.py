@@ -133,7 +133,7 @@ if azure_networking_product == 'VPN Gateway':
         st.video("https://youtu.be/yYnACA8ggNI")
     
     
-    alternative_products = run_query(f'SELECT * FROM "{cloud_comparison}" where Category = "Network Gateway"')
+    alternative_products = run_query(f'SELECT * FROM "{cloud_comparison}"')
     
     
     st.subheader("Similar Offerings by other vendors")
