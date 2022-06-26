@@ -108,35 +108,24 @@ if azure_networking_product == 'VNet':
  
 
 if azure_networking_product == 'VPN Gateway':
-    st.subheader('Basic Concept')
-    st.markdown("A virtual network, in general, can be thought of as a virtual routing switch hosted in the cloud that all services connect to and use to communicate with each other. Azure's virtual network offering is called VNet. Further down the page you will find a list of virtual network offerings by other cloud providers.")
-
-    #what, why = st.columns(2)
+    
 
     #@st.cache(suppress_st_warning=True)
-    def get_azuredoc_info():
-        req = r.get(f"https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
+    def get_vpn_info():
+        req = r.get(f"https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways",
                     headers = {"user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"})
         soup = BeautifulSoup(req.content, features="html.parser") #converting the content/text returned by request to a BeautifulSoup object
-        azure_doc_info = soup.find("div", class_="content").find_all("p")
-        return azure_doc_info
+        vpn_info = soup.find("div", class_="content").find_all("p")
+        return vpn_info
 
-    azure_doc_info = get_azuredoc_info()
+    vpn_info = get_vpn_info()
 
-    #with what:
-        #st.subheader("What is Azure Virtual Network")
-        #what_is_vnet = azure_doc_info[0].text
-        #st.markdown(what_is_vnet)
+    st.subheader('Basic Concept')
+    st.markdown(vpn_info[1].text)
+    
         
-
-    #with why:
-        #st.subheader("Why use an Azure VNet")
-        #why_vnet = azure_doc_info[1].text
-        #st.markdown(why_vnet)
-        
-    st.subheader("Azure VNet")
-    why_vnet = azure_doc_info[1].text
-    st.markdown(why_vnet)
+    st.subheader("VPN Gateway")
+    st.markdown(vpn_info[2].text)
     st.write('https://azure.microsoft.com/en-us/services/virtual-network/')  
 
     st.subheader("Video Tutorial")
