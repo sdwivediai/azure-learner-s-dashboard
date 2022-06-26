@@ -65,41 +65,46 @@ if azure_networking_product == 'VNet':
     
     
     st.subheader("Similar Offerings by other vendors")
-        
     
+    col1, col2 = st.columns(2)
+   
     with st.expander("Expand for details"):
-        vendor, product, link =st.columns(3)
-
-        with vendor: 
-            st.subheader("Vendor")
-            st.write("Google")
-            st.write("AWS")
-            st.write("IBM")
-            st.write("Oracle")
-            st.write("Alibaba")
-            st.write("Huawei")
+        
+         with col1: 
             
+            vendor, product, link =st.columns(3)
 
-        with product:
-            st.subheader("Offering Name")
-            st.write(alternative_products[0].Google)
-            st.write(alternative_products[0].AWS)
-            st.write(alternative_products[0].IBM)
-            st.write(alternative_products[0].Oracle)
-            st.write(alternative_products[0].Alibaba)
-            st.write(alternative_products[0].Huawei)
-
-        with link:
-            st.subheader("Link")
-            st.markdown("https://cloud.google.com/vpc", unsafe_allow_html=True)
-            st.markdown("https://aws.amazon.com/vpc/", unsafe_allow_html=True)
-            st.markdown("https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started", unsafe_allow_html=True)
-            st.markdown("https://cloud.oracle.com/networking", unsafe_allow_html=True)
-            st.markdown("https://www.alibabacloud.com/product/vpc", unsafe_allow_html=True)
-            st.markdown("https://www.huaweicloud.com/intl/en-us/product/vpc.html", unsafe_allow_html=True)
+            with vendor: 
+                st.subheader("Vendor")
+                st.write("Google")
+                st.write("AWS")
+                st.write("IBM")
+                st.write("Oracle")
+                st.write("Alibaba")
+                st.write("Huawei")
 
 
-            
+            with product:
+                st.subheader("Offering Name")
+                st.write(alternative_products[0].Google)
+                st.write(alternative_products[0].AWS)
+                st.write(alternative_products[0].IBM)
+                st.write(alternative_products[0].Oracle)
+                st.write(alternative_products[0].Alibaba)
+                st.write(alternative_products[0].Huawei)
+
+            with link:
+                st.subheader("Link")
+                st.markdown("https://cloud.google.com/vpc", unsafe_allow_html=True)
+                st.markdown("https://aws.amazon.com/vpc/", unsafe_allow_html=True)
+                st.markdown("https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started", unsafe_allow_html=True)
+                st.markdown("https://cloud.oracle.com/networking", unsafe_allow_html=True)
+                st.markdown("https://www.alibabacloud.com/product/vpc", unsafe_allow_html=True)
+                st.markdown("https://www.huaweicloud.com/intl/en-us/product/vpc.html", unsafe_allow_html=True)
+
+        with col2:
+            st.subheader("Important difference(s), if any, with competitive offerings")
+            st.markdown("Azure VNet and AWS VPC are created in a region. They can span across multiple Availability Zones(AZ) though and subnets exist inisde an AZ. In comparison, a Google Cloud VPC is a global resource and is not associated with any specific region. The subnets in it are region specific. ")        
     
     st.subheader("Click the below link for more info")
     st.write('https://azure.microsoft.com/en-us/services/virtual-network/')       
