@@ -139,10 +139,19 @@ if azure_networking_product == 'VPN Gateway':
     st.subheader("Similar Offerings by other vendors")
    
     with st.expander("Expand for details"):
-  
-        for product in alternative_products:
-            st.write(f"{product.Vendors} --  {product.Network_Gateway}")
+        vendor, product, link = st.columns(3)
         
+        with vendor:
+            for alt in alternative_products:
+                st.write(f"{alt.Vendors}")
+        
+        with product:
+            for alt in alternative_products:
+                st.write(f"{alt.Network_Gateway}")
+        
+        with link:
+            for alt in alternative_products:
+                st.write(f"{alt.Network_Gateway_link}")
      
     st.subheader("Important difference(s), if any, with competitive offerings")
     #st.markdown("Azure VNet and AWS VPC are created in a region. They can span across multiple Availability Zones(AZ) though and subnets exist inisde an AZ. In comparison, a Google Cloud VPC is a global resource and is not associated with any specific region. The subnets in it are region specific. ")        
