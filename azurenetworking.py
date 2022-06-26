@@ -125,8 +125,8 @@ if azure_networking_product == 'VPN Gateway':
     
         
     st.subheader("VPN Gateway")
-    st.markdown(vpn_info[2].text)
-    st.write('https://azure.microsoft.com/en-us/services/virtual-network/')  
+    st.markdown(vpn_info[0].text)
+    st.write('https://azure.microsoft.com/en-us/services/vpn-gateway/')  
 
     st.subheader("Video Tutorial")
     with st.expander("Expand for tutorial"):
