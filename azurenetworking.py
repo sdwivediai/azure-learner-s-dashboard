@@ -69,9 +69,7 @@ if azure_networking_product == 'VNet':
     col1, col2 = st.columns(2)
    
     with st.expander("Expand for details"):
-        
-         with col1: 
-            
+         with col1:  
             vendor, product, link =st.columns(3)
 
             with vendor: 
@@ -102,7 +100,7 @@ if azure_networking_product == 'VNet':
                 st.markdown("https://www.alibabacloud.com/product/vpc", unsafe_allow_html=True)
                 st.markdown("https://www.huaweicloud.com/intl/en-us/product/vpc.html", unsafe_allow_html=True)
 
-        with col2:
+         with col2:
             st.subheader("Important difference(s), if any, with competitive offerings")
             st.markdown("Azure VNet and AWS VPC are created in a region. They can span across multiple Availability Zones(AZ) though and subnets exist inisde an AZ. In comparison, a Google Cloud VPC is a global resource and is not associated with any specific region. The subnets in it are region specific. ")        
     
