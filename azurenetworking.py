@@ -27,7 +27,7 @@ with st.sidebar:
 
 if azure_networking_product == 'VNet':
     st.subheader('Basic Concept')
-    st.markdown("A virtual network, in general, can be thought of as a virtual routing switch hosted in the cloud that all services connect to and use to communicate with each other. Azure's virtual network offering is called VNet. Further down the page you will find a list of virtual network offerings by other cloud providers. https://azure.microsoft.com/en-us/services/virtual-network/")
+    st.markdown("A virtual network, in general, can be thought of as a virtual routing switch hosted in the cloud that all services connect to and use to communicate with each other. Azure's virtual network offering is called VNet. Further down the page you will find a list of virtual network offerings by other cloud providers.")
 
     #what, why = st.columns(2)
 
@@ -55,6 +55,7 @@ if azure_networking_product == 'VNet':
     st.subheader("Azure VNet")
     why_vnet = azure_doc_info[1].text
     st.markdown(why_vnet)
+    st.write('https://azure.microsoft.com/en-us/services/virtual-network/')  
 
     st.subheader("Video Tutorial")
     with st.expander("Expand for tutorial"):
