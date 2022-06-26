@@ -195,7 +195,7 @@ if azure_networking_product == 'Load Balancer':
         
     st.subheader("Azure Load Balancer")
     st.markdown(lb_info[1].text)
-    st.write('https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview')  
+    st.write('https://azure.microsoft.com/en-us/services/load-balancer/#overview')  
 
     st.subheader("Video Tutorial")
     with st.expander("Expand for tutorial"):
