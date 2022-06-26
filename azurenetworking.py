@@ -143,7 +143,7 @@ if azure_networking_product == 'VPN Gateway':
         product, link =st.columns(2)
 
         for product in alternative_products:
-            st.write(f"{product.Vendors} -- {product.Network_Gateway} -- [link](https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview"))
+            st.write(f"{product.Vendors} -- {product.Network_Gateway} -- [link](https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview")
         
 
         with link:
