@@ -139,7 +139,7 @@ if azure_networking_product == 'VPN Gateway':
     st.subheader("Similar Offerings by other vendors")
    
     with st.expander("Expand for details"):
- 
+    
         vendor, product, link =st.columns(3)
 
         with vendor: 
@@ -154,7 +154,7 @@ if azure_networking_product == 'VPN Gateway':
 
         with product:
             st.subheader("Offering Name")
-            st.write(alternative_products[0].Google)
+            st.write(alternative_products.Google)
             st.write(alternative_products[0].AWS)
             st.write(alternative_products[0].IBM)
             st.write(alternative_products[0].Oracle)
