@@ -184,17 +184,17 @@ if azure_networking_product == 'Load Balancer':
         req = r.get(f"https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
                     headers = {"user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"})
         soup = BeautifulSoup(req.content, features="html.parser") #converting the content/text returned by request to a BeautifulSoup object
-        vpn_info = soup.find("div", class_="content").find_all("p")
-        return vpn_info
+        lb_info = soup.find("div", class_="content").find_all("p")
+        return lb_info
 
-    vpn_info = get_vpn_info()
+    lb_info = get_lb_info()
 
     st.subheader('Basic Concept')
-    st.markdown(vpn_info[0].text)
+    st.markdown(lb_info[0].text)
     
         
     st.subheader("Azure Load Balancer")
-    st.markdown(vpn_info[1].text)
+    st.markdown(lb_info[1].text)
     st.write('https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview')  
 
     st.subheader("Video Tutorial")
