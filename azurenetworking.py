@@ -69,16 +69,16 @@ if azure_networking_product == 'VNet':
    
     with st.expander("Expand for details"):
  
-        vendor, product, link =st.columns(3)
+        product, link =st.columns(2)
 
-        with vendor: 
-            st.subheader("Vendor")
-            st.write("Google")
-            st.write("AWS")
-            st.write("IBM")
-            st.write("Oracle")
-            st.write("Alibaba")
-            st.write("Huawei")
+        #with vendor: 
+            #st.subheader("Vendor")
+            #st.write("Google")
+            #st.write("AWS")
+            #st.write("IBM")
+            #st.write("Oracle")
+            #st.write("Alibaba")
+            #st.write("Huawei")
 
 
         with product:
