@@ -5,12 +5,9 @@ import requests as r
 import streamlit as st
 from gsheetsdb import connect
 
-# # Create a connection object.
+
 conn = connect()
 
-
-# # Perform SQL query on the Google Sheet.
-# # Uses st.cache to only rerun when the query changes or after 10 min.
 @st.cache(ttl=600)
 def run_query(query):
     rows = conn.execute(query, headers=1)
@@ -30,9 +27,7 @@ if azure_networking_product == 'VNet':
     st.subheader('Basic Concept')
     st.markdown("A virtual network, in general, can be thought of as a virtual routing switch hosted in the cloud that all services connect to and use to communicate with each other. Azure's virtual network offering is called VNet. Further down the page you will find a list of virtual network offerings by other cloud providers.")
 
-    #what, why = st.columns(2)
-
-    #@st.cache(suppress_st_warning=True)
+     
     def get_azuredoc_info():
         req = r.get(f"https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
                     headers = {"user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"})
@@ -105,9 +100,7 @@ if azure_networking_product == 'VPN Gateway':
     with st.expander("Expand for tutorial"):
         st.video("https://youtu.be/yYnACA8ggNI")
     
-    
-    
-    
+        
     
     st.subheader("Similar Offerings by other vendors")
    
