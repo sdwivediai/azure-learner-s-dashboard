@@ -24,8 +24,7 @@ alternative_products = run_query(f'SELECT * FROM "{cloud_comparison}"')
 with st.sidebar:
     azure_networking_product = st.radio('Choose an Azure networking product', ['VNet', 'VPN Gateway', 'Load Balancer'])
                                                                                
-                                                                               #'CDN', 'AFD', 'DNS', 'Traffic Manager', 'Express Route']) 
-
+                                                                             
     
 if azure_networking_product == 'VNet':
     st.subheader('Basic Concept')
@@ -180,8 +179,7 @@ if azure_networking_product == 'Load Balancer':
         
      
     st.subheader("Important difference(s), if any, with competitive offerings")
-    #st.markdown("Azure VNet and AWS VPC are created in a region. They can span across multiple Availability Zones(AZ) though and subnets exist inisde an AZ. In comparison, a Google Cloud VPC is a global resource and is not associated with any specific region. The subnets in it are region specific. ")        
-
+   
         
       
 
